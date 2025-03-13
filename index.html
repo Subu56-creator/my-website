@@ -18,6 +18,13 @@
         <img src="Mystory.png" alt="My Story" style="width: 100%; display: block;">
     </div>
 
+    <!-- Did you know? -->
+    <div class="image-section">
+        <img src="Did you know.png" alt="Did You Know Section">
+    </div>
+    
+
+
     <!-- MINI GAMES -->
     <div>
         <img src="minigames.png" alt="MiniGames" style="width: 100%; display: block;">
@@ -161,6 +168,124 @@
         <p id="anime-quiz-result"></p>
     </div>
 </div>
+
+ <!-- LIFE EXPERIENCE CHECKLIST -->
+<div class="life-container">
+    <h2>LIFE EXPERIENCE CHECKLIST</h2>
+    <p>Check off the things you have experienced and see your life score!</p>
+
+    <div id="life-quiz">
+        <div class="life-grid">
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 💨 Smoked a cigarette or something else</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🍺 Got drunk for the first time</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 💋 Had your first kiss</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 💔 Got rejected or ghosted</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🚑 Had a near-death experience</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🎰 Gambled at a casino or online</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🏃 Ran from the cops (or almost did)</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🎤 Performed in front of a crowd</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🚗 Drove over 200 km/h (124 mph)</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> ✈️ Missed a flight or got stuck in an airport</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 👊 Got into a physical fight</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 💸 Lost a huge amount of money</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🕵️‍♂️ Had a secret or double life</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 👮 Got arrested or detained</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 👻 Experienced something paranormal</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 📛 Got a tattoo or piercing</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🏝️ Got lost in a foreign country</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 💔 Cheated or got cheated on</label>
+            <label class="life-item"><input type="checkbox" onclick="updateLifeScore()"> 🚨 Did something illegal and got away</label>
+        </div>
+
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <button class="submit-btn" onclick="calculateLifeScore()">SEE YOUR SCORE</button>
+        <p id="life-quiz-result"></p>
+    </div>
+</div>
+
+<!-- LIFE CLOCK & DEATH PREDICTOR -->
+<div class="quiz-container life-clock">
+    <h2>LIFE CLOCK & DEATH PREDICTOR</h2>
+    <p>Enter your birthdate, height, and weight to see your stats and estimated death date!</p>
+
+    <div class="life-inputs">
+        <label>📅 Birthdate: <input type="date" id="birthdate"></label>
+        <label>📏 Height (cm): <input type="number" id="height" placeholder="e.g. 175"></label>
+        <label>⚖️ Weight (kg): <input type="number" id="weight" placeholder="e.g. 70"></label>
+    </div>
+
+    <button class="submit-btn" onclick="calculateLifeStats()">CALCULATE</button>
+
+    <div id="life-results">
+        <p id="age-result"></p>
+        <p id="bmi-result"></p>
+        <p id="death-result"></p>
+    </div>
+</div>
+
+<!-- CANCELLATION QUIZ -->
+<div class="quiz-container cancel-quiz">
+    <h2>HOW SOON WILL YOU GET CANCELED?</h2>
+    <p>Answer honestly and find out if you're safe... or absolutely cooked.</p>
+
+    <div id="cancel-quiz">
+        <div class="question">
+            <p>1️⃣ Are you homophobic?</p>
+            <button class="quiz-btn" onclick="selectAnswer(1, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(1, false)">❌ No</button>
+        </div>
+
+        <div class="question">
+            <p>2️⃣ Are you against feminism?</p>
+            <button class="quiz-btn" onclick="selectAnswer(2, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(2, false)">❌ No</button>
+        </div>
+
+        <div class="question">
+            <p>3️⃣ Do you enjoy dark humor?</p>
+            <button class="quiz-btn" onclick="selectAnswer(3, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(3, false)">❌ No</button>
+        </div>
+
+        <div class="question">
+            <p>4️⃣ Are you racist?</p>
+            <button class="quiz-btn" onclick="selectAnswer(4, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(4, false)">❌ No</button>
+        </div>
+
+        <div class="question">
+            <p>5️⃣ Do you enjoy brainrot?</p>
+            <button class="quiz-btn" onclick="selectAnswer(5, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(5, false)">❌ No</button>
+        </div>
+
+        <div class="question">
+            <p>6️⃣ Have you ever posted something online that you knew would start a fight?</p>
+            <button class="quiz-btn" onclick="selectAnswer(6, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(6, false)">❌ No</button>
+        </div>
+
+        <div class="question">
+            <p>7️⃣ Do you think cancel culture is stupid?</p>
+            <button class="quiz-btn" onclick="selectAnswer(7, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(7, false)">❌ No</button>
+        </div>
+
+        <div class="question">
+            <p>8️⃣ Would you double down instead of apologizing if you got called out?</p>
+            <button class="quiz-btn" onclick="selectAnswer(8, true)">✅ Yes</button>
+            <button class="quiz-btn" onclick="selectAnswer(8, false)">❌ No</button>
+        </div>
+
+        <button class="submit-btn cancel-submit" onclick="calculateCancelScore()">SEE YOUR FATE</button>
+
+        <p id="cancel-quiz-result"></p>
+    </div>
+</div>
+
 
 
 
