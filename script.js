@@ -219,6 +219,60 @@ function calculateCancelScore() {
 }
 
 
+// Correct answers with multiple accepted variations
+const gameAnswers = [
+    ["tekken", "tekken 5", "tekken 8"], // 1
+    ["the witcher 5", "witcher", "witcher 5"], // 2
+    ["resident evil 4", "resident evil", "resident evil 2"], // 3
+    ["rdr2", "red dead redemption", "red dead redemption 2"], // 4
+    ["elden ring", "dark souls", "elden rings"], // 5
+    ["among us", "amogus", "imposter"], // 6
+    ["csgo", "cs2", "counter strike"] // 7
+];
+
+let currentQuestion = 0;
+let gameScore = 0;
+
+// Load the first question
+function loadQuestion() {
+    if (currentQuestion >= gameAnswers.length) {
+        let finalMessage = "🎉 Game Over! Final Score: " + gameScore;
+
+        if (gameScore === 3) {
+            finalMessage += " - Not bad son.";
+        } else if (gameScore === 5) {
+            finalMessage += " - You know your games 🔥👏.";
+        } else if (gameScore === 7) {
+            finalMessage += " - Perfect, What a nerd! :D";
+        }
+
+        document.getElementById("game-feedback").innerText = finalMessage;
+        return;
+    }
+
+    document.getElementById("question-number").innerText = currentQuestion + 1;
+    document.getElementById("user-input").value = "";
+}
+
+// Check the player's guess
+function checkGuess() {
+    let userGuess = document.getElementById("user-input").value.trim().toLowerCase();
+    let correctAnswers = gameAnswers[currentQuestion];
+
+    if (correctAnswers.includes(userGuess)) {
+        document.getElementById("game-feedback").innerText = "✅ Correct!";
+        gameScore++;
+        document.getElementById("game-score").innerText = gameScore;
+        currentQuestion++;
+        setTimeout(loadQuestion, 1000);
+    } else {
+        document.getElementById("game-feedback").innerText = "❌ Wrong! Try again. (Remember: all lowercase)";
+    }
+}
+
+// Start the game when the page loads
+window.onload = loadQuestion;
+
 
 
 
