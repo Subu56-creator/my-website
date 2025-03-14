@@ -7,84 +7,160 @@ body {
 }
 
 /* Quiz Section */
-.quiz-container {
-    background-color: #10243E;
-    padding: 20px;
+/* Quiz Buttons */
+/* MORAL PHILOSOPHY QUIZ - DARK BLUE & GOLD THEME */
+.moral {
+    background-color: #1E2A40; /* Dark Blue Background */
+    padding: 30px;
     margin: 40px auto;
-    width: 60%;
-    border-radius: 10px;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+    width: 70%;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
-h2 {
-    color: #FFD25A;
+.moral h2 {
+    color: #FFD700; /* Gold Title */
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-.question {
-    margin: 20px 0;
+.moral p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
 }
 
-button {
-    background-color: #FFD25A;
-    color: #1E3352;
+/* Quiz Buttons */
+.moral .quiz-btn {
+    background-color: #FFC107; /* Gold Buttons */
+    color: black;
     border: none;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 18px;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.2s;
     margin: 5px;
+    display: inline-block;
 }
 
-button:hover {
-    background-color: #F9B208;
+.moral .quiz-btn:hover {
+    background-color: #E0A800; /* Darker Gold on Hover */
 }
+
+/* Highlight the selected answer */
+/* Highlight the selected answer */
+.quiz-btn.selected {
+    background-color: #5F9EA0 !important; /* This is causing the issue */
+    color: white !important;
+}
+
 
 /* Submit Button */
-.submit-btn {
-    background-color: #F23D3D;
-    color: white;
+.moral .submit-btn {
+    background-color: #FFD700; /* Gold Submit Button */
+    color: black;
     padding: 12px 25px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 8px;
-    margin-top: 20px;
     cursor: pointer;
+    transition: 0.2s;
+    margin-top: 20px;
 }
 
-.submit-btn:hover {
-    background-color: #C72B2B;
+.moral .submit-btn:hover {
+    background-color: #E0A800; /* Darker Gold Hover */
 }
 
+/* Quiz Result */
 #quiz-result {
-    margin-top: 15px;
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Anime Protagonist Quiz - ORANGE THEME */
+/* ANIME PROTAGONIST QUIZ - DARK PURPLE & ORANGE THEME */
+.anime {
+    background-color: #1B1431; /* Dark Purple Background */
+    padding: 30px;
+    margin: 40px auto;
+    width: 70%;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.anime h2 {
+    color: #FF914D; /* Bright Orange Title */
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
     font-weight: bold;
 }
-/* Anime Protagonist Quiz - ORANGE THEME */
-.anime-quiz {
-    background-color: #251F3F; /* Darker Blue for contrast */
+
+.anime p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
 }
 
-.anime-quiz h2 {
-    color: #FF914D; /* Orange title */
+/* Quiz Buttons */
+.anime .quiz-btn {
+    background-color: #FF914D; /* Orange Buttons */
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: 5px;
+    display: inline-block;
 }
 
-.anime-quiz button {
-    background-color: #FF914D; /* Orange buttons */
-    color: #1E3352;
+.anime .quiz-btn:hover {
+    background-color: #E67E30; /* Darker Orange on Hover */
 }
 
-.anime-quiz button:hover {
+/* Highlight the selected answer */
+.anime .quiz-btn.selected {
+    background-color: #1bc10f !important; /* Dark Orange */
+    color: white !important;
+}
+
+/* Submit Button */
+.anime .submit-btn {
+    background-color: #FF914D; /* Orange Submit Button */
+    color: black;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 20px;
+}
+
+.anime .submit-btn:hover {
     background-color: #E67E30; /* Darker Orange Hover */
 }
 
-.anime-quiz .submit-btn {
-    background-color: #C72B2B; /* Red submit button */
+/* Quiz Result */
+#anime-quiz-result {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
 }
 
-.anime-quiz .submit-btn:hover {
-    background-color: #A11F1F;
-}
 /* LIFE CHECKLIST - MODERN GREEN THEME */
 .life-container {
     background-color: #1C3D2C;
@@ -265,31 +341,32 @@ button:hover {
 }
 
 /* CANCELLATION QUIZ - PINK THEME */
-.cancel-quiz {
-    background-color: #ffccd5;
+/* CANCELLATION QUIZ - PINK THEME */
+.cancel {
+    background-color: #ffccd5; /* Light Pink Background */
     padding: 30px;
     margin: 40px auto;
     width: 70%;
     border-radius: 12px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
-.cancel-quiz h2 {
-    color: #ff4d6d;
+.cancel h2 {
+    color: #ff4d6d; /* Pink-Red Title */
     font-size: 28px;
     margin-bottom: 10px;
 }
 
-.cancel-quiz p {
+.cancel p {
     font-size: 18px;
-    color: #660033;
+    color: #660033; /* Dark Red Text */
     margin-bottom: 20px;
 }
 
 /* Quiz Buttons */
-.quiz-btn {
-    background-color: #ff4d6d;
+.cancel .quiz-btn {
+    background-color: #ff4d6d; /* Pink-Red Buttons */
     color: white;
     border: none;
     padding: 12px 20px;
@@ -301,16 +378,25 @@ button:hover {
     margin: 5px;
 }
 
-.quiz-btn:hover {
-    background-color: #d90429;
+.cancel .quiz-btn:hover {
+    background-color: #d90429; /* Darker Red on Hover */
 }
 
-.cancel-submit {
-    background-color: #ff69b4;
+/* Submit Button */
+.cancel .submit-btn {
+    background-color: #ff69b4; /* Hot Pink Submit Button */
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
 }
 
-.cancel-submit:hover {
-    background-color: #c2185b;
+.cancel .submit-btn:hover {
+    background-color: #c2185b; /* Darker Pink Hover */
 }
 
 /* Score Result */
@@ -318,8 +404,10 @@ button:hover {
     margin-top: 20px;
     font-size: 22px;
     font-weight: bold;
-    color: #660033;
+    color: #660033; /* Dark Red Text */
 }
+
+
 .image-section img {
     width: 100%;  /* Makes it scale across different screen sizes */
     max-width: 1200px; /* Adjust this to match your other images */
@@ -328,6 +416,8 @@ button:hover {
     margin: 20px auto; /* Centers the image */
     border-radius: 10px; /* Optional: Keeps a smooth edge */
 }
+
+
 
 
 .anime-quiz .submit-btn:hover {
