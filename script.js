@@ -235,13 +235,10 @@ let gameScore = 0;
 // Load the first question
 function loadQuestion() {
     if (currentQuestion >= gameAnswers.length) {
+        // Final message when all 7 are correct
         let finalMessage = "🎉 Game Over! Final Score: " + gameScore;
 
-        if (gameScore === 3) {
-            finalMessage += " - Not bad son.";
-        } else if (gameScore === 5) {
-            finalMessage += " - You know your games 🔥👏.";
-        } else if (gameScore === 7) {
+        if (gameScore === 7) {
             finalMessage += " - Perfect, What a nerd! :D";
         }
 
@@ -259,9 +256,17 @@ function checkGuess() {
     let correctAnswers = gameAnswers[currentQuestion];
 
     if (correctAnswers.includes(userGuess)) {
-        document.getElementById("game-feedback").innerText = "✅ Correct!";
         gameScore++;
         document.getElementById("game-score").innerText = gameScore;
+        document.getElementById("game-feedback").innerText = "✅ Correct!";
+
+        // Special messages at 3 and 5 correct
+        if (gameScore === 3) {
+            document.getElementById("game-feedback").innerText += " - Not bad son.";
+        } else if (gameScore === 5) {
+            document.getElementById("game-feedback").innerText += " - You know your games 🔥👏.";
+        }
+
         currentQuestion++;
         setTimeout(loadQuestion, 1000);
     } else {
@@ -271,7 +276,6 @@ function checkGuess() {
 
 // Start the game when the page loads
 window.onload = loadQuestion;
-
 
 
 
