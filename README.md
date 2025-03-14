@@ -1,2 +1,2 @@
 # my-website
-The website is not fully functional yet, how's the design tho? :O
+Made this just for fun, Give me more ideas if you have some because I want to keep improving my site :D
