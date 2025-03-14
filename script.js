@@ -260,12 +260,15 @@ function checkGuess() {
         document.getElementById("game-score").innerText = gameScore;
         document.getElementById("game-feedback").innerText = "✅ Correct!";
 
-        // Special messages at 3 and 5 correct
-        if (gameScore === 3) {
-            document.getElementById("game-feedback").innerText += " - Not bad son.";
-        } else if (gameScore === 5) {
-            document.getElementById("game-feedback").innerText += " - You know your games 🔥👏.";
-        }
+        // Special messages at 3, 5, and 7 correct
+if (gameScore === 3) {
+    document.getElementById("game-feedback").innerText += " - Not bad son. 😏";
+} else if (gameScore === 5) {
+    document.getElementById("game-feedback").innerText += " - You know your games 🔥👏.";
+} else if (gameScore === 7) {
+    document.getElementById("game-feedback").innerText += " - Perfect, What a nerd! 😆🎮";
+}
+
 
         currentQuestion++;
         setTimeout(loadQuestion, 1000);
