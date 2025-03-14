@@ -1,87 +1,68 @@
-let moralAnswers = {}; // Stores selected answers for Moral Philosophy Quiz
-let animeAnswers = {}; // Stores selected answers for Anime Protagonist Quiz
+let selectedAnswers = {
+    moral: {},
+    anime: {},
+    cancel: {}
+};
 
-// Function to store selected answer based on quiz type
-function selectAnswer(question, answer, quizType) {
-    if (quizType === "moral") {
-        moralAnswers[question] = answer;
-    } else if (quizType === "anime") {
-        animeAnswers[question] = answer;
+// Handle answer selection properly
+function selectAnswer(questionNumber, answer, quizType, button) {
+    if (!selectedAnswers[quizType]) {
+        selectedAnswers[quizType] = {};
     }
 
-    // Highlight selected button (reset others first)
-    let buttons = document.querySelectorAll(`[onclick^="selectAnswer(${question}"]`);
-    buttons.forEach(btn => btn.style.backgroundColor = "#FF914D"); // Default orange
-    document.querySelector(`[onclick="selectAnswer(${question}, '${answer}', '${quizType}')"]`).style.backgroundColor = "#E67E30"; // Darker Orange
+    // Store the selected answer
+    selectedAnswers[quizType][questionNumber] = answer;
+
+    // Find only the buttons in the current question
+    let questionDiv = button.closest(".question");
+    let questionButtons = questionDiv.querySelectorAll("button");
+    
+    // Remove selection from other buttons in the same question
+    questionButtons.forEach(btn => btn.classList.remove("selected"));
+
+    // Highlight the selected button
+    button.classList.add("selected");
+
+    // Debugging: Check if the answers are being stored properly
+    console.log("Current Selections:", selectedAnswers);
 }
 
-// Function to calculate results for the Moral Quiz
+
+
+
+
 function calculateMoralResults() {
-    if (Object.keys(moralAnswers).length < 6) {
-        document.getElementById("quiz-result").innerText = "Please answer all questions!";
-        document.getElementById("quiz-result").style.color = "#F23D3D";
+    let totalQuestions = 6;
+    if (Object.keys(selectedAnswers.moral).length < totalQuestions) {
+        document.getElementById("quiz-result").innerText = "⚠️ Please answer all questions!";
         return;
     }
 
-    let philosopherCount = {
-        "Kant": 0,
-        "Aristotle": 0,
-        "Nietzsche": 0,
-        "Hume": 0,
-        "Descartes": 0
-    };
+    let count = { Kant: 0, Aristotle: 0, Nietzsche: 0, Hume: 0, Descartes: 0 };
+    Object.values(selectedAnswers.moral).forEach(answer => count[answer]++);
 
-    let moralMapping = {
-        "A": "Kant",
-        "B": "Aristotle",
-        "C": "Nietzsche",
-        "D": "Hume",
-        "E": "Descartes"
-    };
-
-    for (let q in moralAnswers) {
-        philosopherCount[moralMapping[moralAnswers[q]]] += 1;
-    }
-
-    let result = Object.keys(philosopherCount).reduce((a, b) => philosopherCount[a] > philosopherCount[b] ? a : b);
-
-    document.getElementById("quiz-result").innerText = "Your philosophical match: " + result;
-    document.getElementById("quiz-result").style.color = "#00D26A";
+    let bestMatch = Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
+    document.getElementById("quiz-result").innerText = `📜 Your philosophy aligns with ${bestMatch}!`;
 }
+
+
 
 // Function to calculate results for the Anime Protagonist Quiz
 function calculateAnimeResults() {
-    if (Object.keys(animeAnswers).length < 7) {
-        document.getElementById("anime-quiz-result").innerText = "Please answer all questions!";
-        document.getElementById("anime-quiz-result").style.color = "#F23D3D";
+    let totalQuestions = 7;
+    if (Object.keys(selectedAnswers.anime).length < totalQuestions) {
+        document.getElementById("anime-quiz-result").innerText = "⚠️ Please answer all questions!";
         return;
     }
 
-    let protagonistCount = {
-        "Luffy": 0,
-        "Goku": 0,
-        "Naruto": 0,
-        "Saeba Ryo": 0,
-        "Eren Yeager": 0
-    };
+    let count = { Luffy: 0, Goku: 0, Naruto: 0, Ryo: 0, Eren: 0 };
+    Object.values(selectedAnswers.anime).forEach(answer => count[answer]++);
 
-    let animeMapping = {
-        "A": "Luffy",
-        "B": "Goku",
-        "C": "Naruto",
-        "D": "Saeba Ryo",
-        "E": "Eren Yeager"
-    };
-
-    for (let q in animeAnswers) {
-        protagonistCount[animeMapping[animeAnswers[q]]] += 1;
-    }
-
-    let result = Object.keys(protagonistCount).reduce((a, b) => protagonistCount[a] > protagonistCount[b] ? a : b);
-
-    document.getElementById("anime-quiz-result").innerText = "Your anime protagonist match: " + result;
-    document.getElementById("anime-quiz-result").style.color = "#00D26A";
+    let bestMatch = Object.keys(count).reduce((a, b) => (count[a] > count[b] ? a : b));
+    document.getElementById("anime-quiz-result").innerText = `🎌 You are most like ${bestMatch}!`;
 }
+
+
 
 function updateLifeScore() {
     let checkedItems = document.querySelectorAll('#life-quiz input[type="checkbox"]:checked').length;
@@ -206,28 +187,31 @@ document.getElementById("bmi-result").innerHTML = `⚖️ Your BMI is <b>${bmi}<
     document.getElementById("death-result").innerHTML = deathMessage;
 }
 
-let cancelScore = 0;
 
-function selectAnswer(question, isYes) {
-    // "Yes" answers increase cancel score
-    if (isYes) {
-        cancelScore++;
-    }
-}
 
 function calculateCancelScore() {
-    let resultText = "";
-
-    if (cancelScore <= 2) {
-        resultText = `"You gotta improve buddy..."`;
-    } else if (cancelScore <= 4) {
-        resultText = `"Menace to society..."`;
-    } else if (cancelScore <= 7) {
-        resultText = `"Bro, you are a red flag factory."`;
-    } else {
-        resultText = `"Don't let bro go outside, absolutely cooked...."`;
+    let totalQuestions = 8;
+    if (Object.keys(selectedAnswers.cancel).length < totalQuestions) {
+        document.getElementById("cancel-quiz-result").innerText = "⚠️ Answer all questions first!";
+        return;
     }
+
+    let score = Object.values(selectedAnswers.cancel).filter(ans => ans === true).length;
+    let resultText = score <= 2 ? "✅ You gotta improve buddy, this is not it." :
+                     score <= 4 ? "🚨 Menace to society..." :
+                     "❌ Don't let bro go outside, absolutely cooked....";
 
     document.getElementById("cancel-quiz-result").innerHTML = `<b>${resultText}</b>`;
 }
+
+
+
+
+
+
+
+
+
+
+
 
