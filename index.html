@@ -314,7 +314,24 @@
 </div>
 
 
+ <!-- GUESS THE GAME SECTION -->
+<div class="guess-game-container">
+    <h2>🎮 Guess the Game!</h2>
+    <p>Look at the image and type the correct game title for the number shown. (All lowercase)</p>
 
+    <div class="image-container">
+        <img id="game-image" src="Game Icons.png" alt="Game Icons" class="game-icons">
+        <img id="guess-image" src="Guess the game.png" alt="Guess the Game" class="guess-icons">
+    </div>
+
+    <h3>Game Number: <span id="question-number">1</span></h3>
+
+    <input type="text" id="user-input" placeholder="Enter game name..." autocomplete="off">
+    <button onclick="checkGuess()">Submit</button>
+
+    <p id="game-feedback"></p>
+    <p>Score: <span id="game-score">0</span></p>
+</div>
 
 
     <!-- CONTACT SECTION -->
