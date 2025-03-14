@@ -31,142 +31,160 @@
     </div>
 
   <!-- MORAL PHILOSOPHY QUIZ -->
-<div class="quiz-container">
-    <h2>MORAL PHILOSOPHY QUIZ</h2>
+  <div class="quiz-container moral">
+    <h2>📜 Moral Philosophy Quiz</h2>
     <p>Answer the following questions and discover which philosopher matches your thinking!</p>
 
-    <div id="moral-quiz">
-        <div class="question">
-            <p><b>QUESTION 1:</b> What is the basis of moral duty?</p>
-            <button onclick="selectAnswer(1, 'A', 'moral')">A. Universal moral laws (Kant)</button>
-            <button onclick="selectAnswer(1, 'B', 'moral')">B. Good character and moderation (Aristotle)</button>
-            <button onclick="selectAnswer(1, 'C', 'moral')">C. Morality is subjective (Nietzsche)</button>
-            <button onclick="selectAnswer(1, 'D', 'moral')">D. Experience and emotions (Hume)</button>
-            <button onclick="selectAnswer(1, 'E', 'moral')">E. Rational thought (Descartes)</button>
-        </div>
-
-        <div class="question">
-            <p><b>QUESTION 2:</b> A man steals medicine to save his wife. Is it moral?</p>
-            <button onclick="selectAnswer(2, 'A', 'moral')">A. No, stealing is always wrong (Kant)</button>
-            <button onclick="selectAnswer(2, 'B', 'moral')">B. Yes, virtue sometimes breaks rules (Aristotle)</button>
-            <button onclick="selectAnswer(2, 'C', 'moral')">C. Yes, morality is an illusion (Nietzsche)</button>
-            <button onclick="selectAnswer(2, 'D', 'moral')">D. Yes, emotions guide morality (Hume)</button>
-            <button onclick="selectAnswer(2, 'E', 'moral')">E. No, reason must find another way (Descartes)</button>
-        </div>
-
-        <div class="question">
-            <p><b>QUESTION 3:</b> What is the source of moral knowledge?</p>
-            <button onclick="selectAnswer(3, 'A', 'moral')">A. Reason alone determines morality (Kant)</button>
-            <button onclick="selectAnswer(3, 'B', 'moral')">B. Learned through practice & observation (Aristotle)</button>
-            <button onclick="selectAnswer(3, 'C', 'moral')">C. Morality is a tool of social control (Nietzsche)</button>
-            <button onclick="selectAnswer(3, 'D', 'moral')">D. Morality comes from emotions (Hume)</button>
-            <button onclick="selectAnswer(3, 'E', 'moral')">E. Moral truth is based on rational thought (Descartes)</button>
-        </div>
-
-        <div class="question">
-            <p><b>QUESTION 4:</b> What is the ultimate goal of life?</p>
-            <button onclick="selectAnswer(4, 'A', 'moral')">A. To act according to moral duty (Kant)</button>
-            <button onclick="selectAnswer(4, 'B', 'moral')">B. To live virtuously & achieve eudaimonia (Aristotle)</button>
-            <button onclick="selectAnswer(4, 'C', 'moral')">C. To create personal meaning (Nietzsche)</button>
-            <button onclick="selectAnswer(4, 'D', 'moral')">D. To pursue pleasure and minimize suffering (Hume)</button>
-            <button onclick="selectAnswer(4, 'E', 'moral')">E. To attain perfect knowledge through reason (Descartes)</button>
-        </div>
-
-        <div class="question">
-            <p><b>QUESTION 5:</b> How should we approach the question of free will?</p>
-            <button onclick="selectAnswer(5, 'A', 'moral')">A. Morality requires us to assume free will (Kant)</button>
-            <button onclick="selectAnswer(5, 'B', 'moral')">B. Virtue assumes we have free will (Aristotle)</button>
-            <button onclick="selectAnswer(5, 'C', 'moral')">C. Free will is an illusion; instincts drive us (Nietzsche)</button>
-            <button onclick="selectAnswer(5, 'D', 'moral')">D. Choices come from habits and emotions (Hume)</button>
-            <button onclick="selectAnswer(5, 'E', 'moral')">E. Free will exists because reason allows us to doubt (Descartes)</button>
-        </div>
-
-        <div class="question">
-            <p><b>QUESTION 6:</b> What is the role of happiness in morality?</p>
-            <button onclick="selectAnswer(6, 'A', 'moral')">A. Happiness is irrelevant; duty is more important (Kant)</button>
-            <button onclick="selectAnswer(6, 'B', 'moral')">B. A moral life should aim at happiness & flourishing (Aristotle)</button>
-            <button onclick="selectAnswer(6, 'C', 'moral')">C. Happiness is weak; strive for greatness instead (Nietzsche)</button>
-            <button onclick="selectAnswer(6, 'D', 'moral')">D. Morality should bring happiness because emotions guide it (Hume)</button>
-            <button onclick="selectAnswer(6, 'E', 'moral')">E. Happiness comes from intellectual clarity (Descartes)</button>
-        </div>
-
-        <button class="submit-btn" onclick="calculateMoralResults()">SUBMIT</button>
-        <p id="quiz-result"></p>
+    <!-- Question 1 -->
+    <div class="question">
+        <h3>1) What is the basis of moral duty?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(1, 'Kant', 'moral', this)">A) Universal moral laws (Kant)</button>
+        <button class="quiz-btn" onclick="selectAnswer(1, 'Aristotle', 'moral', this)">B) Good character and moderation (Aristotle)</button>
+        <button class="quiz-btn" onclick="selectAnswer(1, 'Nietzsche', 'moral', this)">C) Morality is subjective (Nietzsche)</button>
+        <button class="quiz-btn" onclick="selectAnswer(1, 'Hume', 'moral', this)">D) Experience and emotions (Hume)</button>
+        <button class="quiz-btn" onclick="selectAnswer(1, 'Descartes', 'moral', this)">E) Rational thought (Descartes)</button>
     </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <h3>2) A man steals medicine to save his wife. Is it moral?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(2, 'Kant', 'moral', this)">A) No, stealing is always wrong (Kant)</button>
+        <button class="quiz-btn" onclick="selectAnswer(2, 'Aristotle', 'moral', this)">B) Yes, virtue sometimes breaks rules (Aristotle)</button>
+        <button class="quiz-btn" onclick="selectAnswer(2, 'Nietzsche', 'moral', this)">C) Yes, morality is an illusion (Nietzsche)</button>
+        <button class="quiz-btn" onclick="selectAnswer(2, 'Hume', 'moral', this)">D) Yes, emotions guide morality (Hume)</button>
+        <button class="quiz-btn" onclick="selectAnswer(2, 'Descartes', 'moral', this)">E) No, reason must find another way (Descartes)</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <h3>3) What is the source of moral knowledge?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(3, 'Kant', 'moral', this)">A) Reason alone determines morality (Kant)</button>
+        <button class="quiz-btn" onclick="selectAnswer(3, 'Aristotle', 'moral', this)">B) Learned through practice & observation (Aristotle)</button>
+        <button class="quiz-btn" onclick="selectAnswer(3, 'Nietzsche', 'moral', this)">C) Morality is a tool of social control (Nietzsche)</button>
+        <button class="quiz-btn" onclick="selectAnswer(3, 'Hume', 'moral', this)">D) Morality comes from emotions (Hume)</button>
+        <button class="quiz-btn" onclick="selectAnswer(3, 'Descartes', 'moral', this)">E) Moral truth is based on rational thought (Descartes)</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <h3>4) What is the ultimate goal of life?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(4, 'Kant', 'moral', this)">A) To act according to moral duty (Kant)</button>
+        <button class="quiz-btn" onclick="selectAnswer(4, 'Aristotle', 'moral', this)">B) To live virtuously & achieve eudaimonia (Aristotle)</button>
+        <button class="quiz-btn" onclick="selectAnswer(4, 'Nietzsche', 'moral', this)">C) To create personal meaning (Nietzsche)</button>
+        <button class="quiz-btn" onclick="selectAnswer(4, 'Hume', 'moral', this)">D) To pursue pleasure and minimize suffering (Hume)</button>
+        <button class="quiz-btn" onclick="selectAnswer(4, 'Descartes', 'moral', this)">E) To attain perfect knowledge through reason (Descartes)</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <h3>5) How should we approach the question of free will?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(5, 'Kant', 'moral', this)">A) Morality requires us to assume free will (Kant)</button>
+        <button class="quiz-btn" onclick="selectAnswer(5, 'Aristotle', 'moral', this)">B) Virtue assumes we have free will (Aristotle)</button>
+        <button class="quiz-btn" onclick="selectAnswer(5, 'Nietzsche', 'moral', this)">C) Free will is an illusion; instincts drive us (Nietzsche)</button>
+        <button class="quiz-btn" onclick="selectAnswer(5, 'Hume', 'moral', this)">D) Choices come from habits and emotions (Hume)</button>
+        <button class="quiz-btn" onclick="selectAnswer(5, 'Descartes', 'moral', this)">E) Free will exists because reason allows us to doubt (Descartes)</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <h3>6) What is the role of happiness in morality?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(6, 'Kant', 'moral', this)">A) Happiness is irrelevant; duty is more important (Kant)</button>
+        <button class="quiz-btn" onclick="selectAnswer(6, 'Aristotle', 'moral', this)">B) A moral life should aim at happiness & flourishing (Aristotle)</button>
+        <button class="quiz-btn" onclick="selectAnswer(6, 'Nietzsche', 'moral', this)">C) Happiness is weak; strive for greatness instead (Nietzsche)</button>
+        <button class="quiz-btn" onclick="selectAnswer(6, 'Hume', 'moral', this)">D) Morality should bring happiness because emotions guide it (Hume)</button>
+        <button class="quiz-btn" onclick="selectAnswer(6, 'Descartes', 'moral', this)">E) Happiness comes from intellectual clarity (Descartes)</button>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-btn" onclick="calculateMoralResults()">Submit</button>
+
+    <!-- Result Display -->
+    <div id="quiz-result"></div>
 </div>
 
+
     <!-- ANIME PROTAGONIST QUIZ -->
-<div class="quiz-container anime-quiz">
-    <h2>ANIME PROTAGONIST QUIZ</h2>
-    <p>Answer the following questions to find out which anime protagonist matches your personality!</p>
-
-    <div id="anime-quiz">
+    <div class="quiz-container anime">
+        <h2>🎌 Anime Protagonist Quiz</h2>
+        <p>Answer the following questions to find out which anime protagonist matches your personality!</p>
+    
+        <!-- Question 1 -->
         <div class="question">
-            <p><b>QUESTION 1:</b> What drives you the most in life?</p>
-            <button onclick="selectAnswer(1, 'A', 'anime')">A. Adventure and dreams! (Luffy)</button>
-            <button onclick="selectAnswer(1, 'B', 'anime')">B. Becoming the strongest! (Goku)</button>
-            <button onclick="selectAnswer(1, 'C', 'anime')">C. Protecting my friends! (Naruto)</button>
-            <button onclick="selectAnswer(1, 'D', 'anime')">D. Living life my way! (Saeba Ryo)</button>
-            <button onclick="selectAnswer(1, 'E', 'anime')">E. Destroying my enemies! (Eren Yeager)</button>
+            <h3>1) What drives you the most in life?</h3>
+            <button class="quiz-btn" onclick="selectAnswer(1, 'Luffy', 'anime', this)">A) Adventure and dreams! (Luffy)</button>
+            <button class="quiz-btn" onclick="selectAnswer(1, 'Goku', 'anime', this)">B) Becoming the strongest! (Goku)</button>
+            <button class="quiz-btn" onclick="selectAnswer(1, 'Naruto', 'anime', this)">C) Protecting my friends! (Naruto)</button>
+            <button class="quiz-btn" onclick="selectAnswer(1, 'Ryo', 'anime', this)">D) Living life my way! (Saeba Ryo)</button>
+            <button class="quiz-btn" onclick="selectAnswer(1, 'Eren', 'anime', this)">E) Destroying my enemies! (Eren Yeager)</button>
         </div>
-
+    
+        <!-- Question 2 -->
         <div class="question">
-            <p><b>QUESTION 2:</b> How do you handle conflict?</p>
-            <button onclick="selectAnswer(2, 'A', 'anime')">A. Laugh it off unless it's serious. (Luffy)</button>
-            <button onclick="selectAnswer(2, 'B', 'anime')">B. Fight my way through. (Goku)</button>
-            <button onclick="selectAnswer(2, 'C', 'anime')">C. Try talking first. (Naruto)</button>
-            <button onclick="selectAnswer(2, 'D', 'anime')">D. Use wit and charm. (Saeba Ryo)</button>
-            <button onclick="selectAnswer(2, 'E', 'anime')">E. Embrace conflict. (Eren Yeager)</button>
+            <h3>2) How do you handle conflict?</h3>
+            <button class="quiz-btn" onclick="selectAnswer(2, 'Luffy', 'anime', this)">A) Laugh it off unless it's serious. (Luffy)</button>
+            <button class="quiz-btn" onclick="selectAnswer(2, 'Goku', 'anime', this)">B) Fight my way through. (Goku)</button>
+            <button class="quiz-btn" onclick="selectAnswer(2, 'Naruto', 'anime', this)">C) Try talking first. (Naruto)</button>
+            <button class="quiz-btn" onclick="selectAnswer(2, 'Ryo', 'anime', this)">D) Use wit and charm. (Saeba Ryo)</button>
+            <button class="quiz-btn" onclick="selectAnswer(2, 'Eren', 'anime', this)">E) Embrace conflict. (Eren Yeager)</button>
         </div>
-
+    
+        <!-- Question 3 -->
         <div class="question">
-            <p><b>QUESTION 3:</b> What is your leadership style?</p>
-            <button onclick="selectAnswer(3, 'A', 'anime')">A. Inspire with passion and loyalty. (Luffy)</button>
-            <button onclick="selectAnswer(3, 'B', 'anime')">B. Lead by example with strength. (Goku)</button>
-            <button onclick="selectAnswer(3, 'C', 'anime')">C. Bring people together with trust. (Naruto)</button>
-            <button onclick="selectAnswer(3, 'D', 'anime')">D. Mostly solo, but can lead. (Saeba Ryo)</button>
-            <button onclick="selectAnswer(3, 'E', 'anime')">E. Lead with vision, no matter the cost. (Eren Yeager)</button>
+            <h3>3) What is your leadership style?</h3>
+            <button class="quiz-btn" onclick="selectAnswer(3, 'Luffy', 'anime', this)">A) Inspire with passion and loyalty. (Luffy)</button>
+            <button class="quiz-btn" onclick="selectAnswer(3, 'Goku', 'anime', this)">B) Lead by example with strength. (Goku)</button>
+            <button class="quiz-btn" onclick="selectAnswer(3, 'Naruto', 'anime', this)">C) Bring people together with trust. (Naruto)</button>
+            <button class="quiz-btn" onclick="selectAnswer(3, 'Ryo', 'anime', this)">D) Mostly solo, but can lead. (Saeba Ryo)</button>
+            <button class="quiz-btn" onclick="selectAnswer(3, 'Eren', 'anime', this)">E) Lead with vision, no matter the cost. (Eren Yeager)</button>
         </div>
-
+    
+        <!-- Question 4 -->
         <div class="question">
-            <p><b>QUESTION 4:</b> What’s your biggest strength?</p>
-            <button onclick="selectAnswer(4, 'A', 'anime')">A. Loyalty and willpower. (Luffy)</button>
-            <button onclick="selectAnswer(4, 'B', 'anime')">B. Endless determination. (Goku)</button>
-            <button onclick="selectAnswer(4, 'C', 'anime')">C. Connecting with people. (Naruto)</button>
-            <button onclick="selectAnswer(4, 'D', 'anime')">D. Intelligence and charm. (Saeba Ryo)</button>
-            <button onclick="selectAnswer(4, 'E', 'anime')">E. Intensity and sacrifice. (Eren Yeager)</button>
+            <h3>4) What’s your biggest strength?</h3>
+            <button class="quiz-btn" onclick="selectAnswer(4, 'Luffy', 'anime', this)">A) Loyalty and willpower. (Luffy)</button>
+            <button class="quiz-btn" onclick="selectAnswer(4, 'Goku', 'anime', this)">B) Endless determination. (Goku)</button>
+            <button class="quiz-btn" onclick="selectAnswer(4, 'Naruto', 'anime', this)">C) Connecting with people. (Naruto)</button>
+            <button class="quiz-btn" onclick="selectAnswer(4, 'Ryo', 'anime', this)">D) Intelligence and charm. (Saeba Ryo)</button>
+            <button class="quiz-btn" onclick="selectAnswer(4, 'Eren', 'anime', this)">E) Intensity and sacrifice. (Eren Yeager)</button>
         </div>
-
+    
+        <!-- Question 5 -->
         <div class="question">
-            <p><b>QUESTION 5:</b> What would you do in a life-or-death situation?</p>
-            <button onclick="selectAnswer(5, 'A', 'anime')">A. Stay confident and find a way. (Luffy)</button>
-            <button onclick="selectAnswer(5, 'B', 'anime')">B. Fight to the end. (Goku)</button>
-            <button onclick="selectAnswer(5, 'C', 'anime')">C. Work with friends to survive. (Naruto)</button>
-            <button onclick="selectAnswer(5, 'D', 'anime')">D. Use quick thinking to escape. (Saeba Ryo)</button>
-            <button onclick="selectAnswer(5, 'E', 'anime')">E. Do whatever it takes to win. (Eren Yeager)</button>
+            <h3>5) What would you do in a life-or-death situation?</h3>
+            <button class="quiz-btn" onclick="selectAnswer(5, 'Luffy', 'anime', this)">A) Stay confident and find a way. (Luffy)</button>
+            <button class="quiz-btn" onclick="selectAnswer(5, 'Goku', 'anime', this)">B) Fight to the end. (Goku)</button>
+            <button class="quiz-btn" onclick="selectAnswer(5, 'Naruto', 'anime', this)">C) Work with friends to survive. (Naruto)</button>
+            <button class="quiz-btn" onclick="selectAnswer(5, 'Ryo', 'anime', this)">D) Use quick thinking to escape. (Saeba Ryo)</button>
+            <button class="quiz-btn" onclick="selectAnswer(5, 'Eren', 'anime', this)">E) Do whatever it takes to win. (Eren Yeager)</button>
         </div>
-
+    
+        <!-- Question 6 -->
         <div class="question">
-            <p><b>QUESTION 6:</b> How do you deal with failure?</p>
-            <button onclick="selectAnswer(6, 'A', 'anime')">A. Shake it off and move forward. (Luffy)</button>
-            <button onclick="selectAnswer(6, 'B', 'anime')">B. Train harder and come back. (Goku)</button>
-            <button onclick="selectAnswer(6, 'C', 'anime')">C. Use it as motivation. (Naruto)</button>
-            <button onclick="selectAnswer(6, 'D', 'anime')">D. Laugh and learn from it. (Saeba Ryo)</button>
-            <button onclick="selectAnswer(6, 'E', 'anime')">E. Let it fuel my rage. (Eren Yeager)</button>
+            <h3>6) How do you deal with failure?</h3>
+            <button class="quiz-btn" onclick="selectAnswer(6, 'Luffy', 'anime', this)">A) Shake it off and move forward. (Luffy)</button>
+            <button class="quiz-btn" onclick="selectAnswer(6, 'Goku', 'anime', this)">B) Train harder and come back. (Goku)</button>
+            <button class="quiz-btn" onclick="selectAnswer(6, 'Naruto', 'anime', this)">C) Use it as motivation. (Naruto)</button>
+            <button class="quiz-btn" onclick="selectAnswer(6, 'Ryo', 'anime', this)">D) Laugh and learn from it. (Saeba Ryo)</button>
+            <button class="quiz-btn" onclick="selectAnswer(6, 'Eren', 'anime', this)">E) Let it fuel my rage. (Eren Yeager)</button>
         </div>
-
+    
+        <!-- Question 7 -->
         <div class="question">
-            <p><b>QUESTION 7:</b> How do you approach friendships?</p>
-            <button onclick="selectAnswer(7, 'A', 'anime')">A. Protect my crew at all costs. (Luffy)</button>
-            <button onclick="selectAnswer(7, 'B', 'anime')">B. Make friends but remain independent. (Goku)</button>
-            <button onclick="selectAnswer(7, 'C', 'anime')">C. My friends are my family. (Naruto)</button>
-            <button onclick="selectAnswer(7, 'D', 'anime')">D. Few close friends, mostly solo. (Saeba Ryo)</button>
-            <button onclick="selectAnswer(7, 'E', 'anime')">E. Friendship is rare; trust is hard. (Eren Yeager)</button>
+            <h3>7) How do you approach friendships?</h3>
+            <button class="quiz-btn" onclick="selectAnswer(7, 'Luffy', 'anime', this)">A) Protect my crew at all costs. (Luffy)</button>
+            <button class="quiz-btn" onclick="selectAnswer(7, 'Goku', 'anime', this)">B) Make friends but remain independent. (Goku)</button>
+            <button class="quiz-btn" onclick="selectAnswer(7, 'Naruto', 'anime', this)">C) My friends are my family. (Naruto)</button>
+            <button class="quiz-btn" onclick="selectAnswer(7, 'Ryo', 'anime', this)">D) Few close friends, mostly solo. (Saeba Ryo)</button>
+            <button class="quiz-btn" onclick="selectAnswer(7, 'Eren', 'anime', this)">E) Friendship is rare; trust is hard. (Eren Yeager)</button>
         </div>
-
-        <button class="submit-btn" onclick="calculateAnimeResults()">SUBMIT</button>
-        <p id="anime-quiz-result"></p>
+    
+        <!-- Submit Button -->
+        <button class="submit-btn" onclick="calculateAnimeResults()">Submit</button>
+    
+        <!-- Result Display -->
+        <div id="anime-quiz-result"></div>
     </div>
+    
 </div>
 
  <!-- LIFE EXPERIENCE CHECKLIST -->
@@ -227,64 +245,73 @@
 </div>
 
 <!-- CANCELLATION QUIZ -->
-<div class="quiz-container cancel-quiz">
-    <h2>HOW SOON WILL YOU GET CANCELED?</h2>
+<div class="quiz-container cancel">
+    <h2>🚨 How Soon Will You Get Canceled? 🚨</h2>
     <p>Answer honestly and find out if you're safe... or absolutely cooked.</p>
 
-    <div id="cancel-quiz">
-        <div class="question">
-            <p>1️⃣ Are you homophobic?</p>
-            <button class="quiz-btn" onclick="selectAnswer(1, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(1, false)">❌ No</button>
-        </div>
-
-        <div class="question">
-            <p>2️⃣ Are you against feminism?</p>
-            <button class="quiz-btn" onclick="selectAnswer(2, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(2, false)">❌ No</button>
-        </div>
-
-        <div class="question">
-            <p>3️⃣ Do you enjoy dark humor?</p>
-            <button class="quiz-btn" onclick="selectAnswer(3, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(3, false)">❌ No</button>
-        </div>
-
-        <div class="question">
-            <p>4️⃣ Are you racist?</p>
-            <button class="quiz-btn" onclick="selectAnswer(4, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(4, false)">❌ No</button>
-        </div>
-
-        <div class="question">
-            <p>5️⃣ Do you enjoy brainrot?</p>
-            <button class="quiz-btn" onclick="selectAnswer(5, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(5, false)">❌ No</button>
-        </div>
-
-        <div class="question">
-            <p>6️⃣ Have you ever posted something online that you knew would start a fight?</p>
-            <button class="quiz-btn" onclick="selectAnswer(6, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(6, false)">❌ No</button>
-        </div>
-
-        <div class="question">
-            <p>7️⃣ Do you think cancel culture is stupid?</p>
-            <button class="quiz-btn" onclick="selectAnswer(7, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(7, false)">❌ No</button>
-        </div>
-
-        <div class="question">
-            <p>8️⃣ Would you double down instead of apologizing if you got called out?</p>
-            <button class="quiz-btn" onclick="selectAnswer(8, true)">✅ Yes</button>
-            <button class="quiz-btn" onclick="selectAnswer(8, false)">❌ No</button>
-        </div>
-
-        <button class="submit-btn cancel-submit" onclick="calculateCancelScore()">SEE YOUR FATE</button>
-
-        <p id="cancel-quiz-result"></p>
+    <!-- Question 1 -->
+    <div class="question">
+        <h3>1) Are you homophobic?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(1, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(1, false, 'cancel', this)">❌ No</button>
     </div>
+
+    <!-- Question 2 -->
+    <div class="question">
+        <h3>2) Are you against feminism?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(2, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(2, false, 'cancel', this)">❌ No</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question">
+        <h3>3) Do you enjoy dark humor?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(3, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(3, false, 'cancel', this)">❌ No</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question">
+        <h3>4) Are you racist?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(4, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(4, false, 'cancel', this)">❌ No</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question">
+        <h3>5) Do you enjoy brainrot? (Posting wild, unfiltered content)</h3>
+        <button class="quiz-btn" onclick="selectAnswer(5, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(5, false, 'cancel', this)">❌ No</button>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question">
+        <h3>6) Have you ever posted something online knowing it would start a fight?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(6, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(6, false, 'cancel', this)">❌ No</button>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question">
+        <h3>7) Do you think cancel culture is stupid?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(7, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(7, false, 'cancel', this)">❌ No</button>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question">
+        <h3>8) Would you double down instead of apologizing if you got called out?</h3>
+        <button class="quiz-btn" onclick="selectAnswer(8, true, 'cancel', this)">✅ Yes</button>
+        <button class="quiz-btn" onclick="selectAnswer(8, false, 'cancel', this)">❌ No</button>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="submit-btn" onclick="calculateCancelScore()">SEE YOUR FATE</button>
+
+    <!-- Result Display -->
+    <p id="cancel-quiz-result"></p>
 </div>
+
 
 
 
