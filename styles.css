@@ -423,3 +423,70 @@ body {
 .anime-quiz .submit-btn:hover {
     background-color: #A11F1F;
 }
+
+
+
+/* Guess the Game Section */
+.guess-game-container {
+    background-color: #222;
+    padding: 30px;
+    margin: 40px auto;
+    width: 70%;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Image container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Game Icons */
+.game-icons, .guess-icons {
+    width: 45%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Adjust for smaller screens */
+@media screen and (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+    }
+
+    .game-icons, .guess-icons {
+        width: 80%;
+    }
+}
+
+#user-input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#game-feedback {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+
