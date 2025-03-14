@@ -221,12 +221,12 @@ function calculateCancelScore() {
 // Correct answers with multiple accepted variations
 const gameAnswers = [
     ["tekken", "tekken 5", "tekken 8"], // 1
-    ["the witcher 5", "witcher", "witcher 5"], // 2
+    ["the witcher 3", "witcher", "witcher 3", "the witcher"], // 2
     ["resident evil 4", "resident evil", "resident evil 2"], // 3
     ["rdr2", "red dead redemption", "red dead redemption 2"], // 4
-    ["elden ring", "dark souls", "elden rings"], // 5
-    ["among us", "amogus", "imposter"], // 6
-    ["csgo", "cs2", "counter strike"] // 7
+    ["elden ring", "dark souls", "elden rings", "elden"], // 5
+    ["among us", "amogus", "imposter", "amongus"], // 6
+    ["csgo", "cs2", "counter strike","cs"] // 7
 ];
 
 let currentQuestion = 0;
