@@ -417,15 +417,6 @@ body {
     border-radius: 10px; /* Optional: Keeps a smooth edge */
 }
 
-
-
-
-.anime-quiz .submit-btn:hover {
-    background-color: #A11F1F;
-}
-
-
-
 /* Guess the Game Section */
 .guess-game-container {
     background-color: #222;
