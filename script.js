@@ -71,20 +71,41 @@ function updateLifeScore() {
     let progress = (checkedItems / totalItems) * 100;
     document.getElementById("progress-bar").style.width = `${progress}%`;
 
-    document.getElementById("life-quiz-result").innerText = `You've completed ${checkedItems}/20 items`;
-    document.getElementById("life-quiz-result").style.color = "#4CAF50";
+    let lifeScoreMessage = `You've completed ${checkedItems}/20 items`;
+
+    // Check if "Had a secret or double life" is checked
+    let doubleLifeCheckbox = document.getElementById("double-life"); 
+    if (doubleLifeCheckbox && doubleLifeCheckbox.checked) {
+        lifeScoreMessage += `\n\n💀 Double life is crazy, How are you still living with all that guilt..`;
+    }
+
+    // Check if "Have you cheated?" is checked
+    let cheatedCheckbox = document.getElementById("cheated"); 
+    if (cheatedCheckbox && cheatedCheckbox.checked) {
+        lifeScoreMessage += `\n\n🤡 A cheater? really? how can u still live with that guilt...`;
+    }
+
+    // Update the result text
+    let resultElement = document.getElementById("life-quiz-result");
+    if (resultElement) {
+        resultElement.innerText = lifeScoreMessage;
+        resultElement.style.color = "#4CAF50"; // Keep text color consistent
+    } else {
+        console.error("❌ ERROR: Element with ID 'life-quiz-result' not found!");
+    }
 }
 
+    
 function calculateLifeScore() {
     let checkedItems = document.querySelectorAll('#life-quiz input[type="checkbox"]:checked').length;
     let resultText = "";
 
     if (checkedItems >= 15) {
-        resultText = "You are cooked, lad.";
+        resultText = "You are cooked, You've got stories to tell your grandchildern...";
     } else if (checkedItems >= 10) {
-        resultText = "Crazy how you're still living rn...";
+        resultText = "Crazy how you're still living rn...what a life!";
     } else if (checkedItems >= 5) {
-        resultText = "Damn, you suffered.";
+        resultText = "Damn, you probably suffered. Could be worse though :D";
     } else {
         resultText = "Not a bad life.";
     }
@@ -92,6 +113,9 @@ function calculateLifeScore() {
     document.getElementById("life-quiz-result").innerText = `You've completed ${checkedItems}/20 items - ${resultText}`;
     document.getElementById("life-quiz-result").style.color = "#4CAF50";
 }
+
+
+
 function calculateLifeStats() {
     let birthdate = document.getElementById("birthdate").value;
     let height = parseFloat(document.getElementById("height").value);
@@ -124,6 +148,7 @@ function calculateLifeStats() {
     let bmi = (weight / ((height / 100) ** 2)).toFixed(1);
     let bmiCategory = "";
     let lifeExpectancyAdjustment = 0;
+    let roastMessage = ""; // Initialize message
 
     if (bmi < 18.5) {
         bmiCategory = "Underweight";
@@ -131,21 +156,19 @@ function calculateLifeStats() {
     } else if (bmi >= 18.5 && bmi < 25) {
         bmiCategory = "Healthy";
         lifeExpectancyAdjustment = 0; // No change
+        roastMessage = "<br><span style='color:#00FF00;'>🌿 Being healthy in this era is crazy... Good for you though!</span>";
     } else if (bmi >= 25 && bmi < 30) {
         bmiCategory = "Overweight";
         lifeExpectancyAdjustment = -Math.floor(Math.random() * 21) - 30; // Lose 30-50 years
-    } else if (bmi >= 30 && bmi < 35) {
+        roastMessage = "<br><span style='color:#FF9F00;'>💀 Lose some weight fatass, tf...</span>";
+    } else if (bmi >= 30 && bmi < 40) {
         bmiCategory = "Obese";
         lifeExpectancyAdjustment = -Math.floor(Math.random() * 21) - 50; // Lose 50-70 years
-    } else if (bmi >= 35 && bmi < 40) {
-        bmiCategory = "Severely Obese";
-        lifeExpectancyAdjustment = -Math.floor(Math.random() * 21) - 70; // Lose 70-90 years
-    } else if (bmi >= 40 && bmi < 45) {
+        roastMessage = "<br><span style='color:#FF4F4F;'>💀 Nah, can't even roast you at this point... genuinely feel bad for you.</span>";
+    } else if (bmi >= 40) {
         bmiCategory = "Morbidly Obese";
         lifeExpectancyAdjustment = -Math.floor(Math.random() * 26) - 90; // Lose 90-115 years
-    } else {
-        bmiCategory = "Beyond Human Comprehension";
-        lifeExpectancyAdjustment = -Math.floor(Math.random() * 31) - 115; // Lose 115-145 years 💀
+        roastMessage = "<br><span style='color:#D40000;'>💀 Is life really that shit? I get u tbh, food is life...</span>";
     }
 
     // Base life expectancy (starting from 90 years)
@@ -170,22 +193,13 @@ function calculateLifeStats() {
         }
     }
 
+    // Display results
     document.getElementById("age-result").innerHTML = `⏳ You are <b>${ageYears} years, ${ageMonths} months, and ${ageDays} days</b> old. <br> That’s about <b>${ageMinutes.toLocaleString()} minutes</b> of life!`;
     
-    let roastMessage = "";
-if (bmi >= 25 && bmi < 30) {
-    roastMessage = "<br><span style='color:#FF9F00;'>💀 Lose some weight fatass, tf...</span>";
-} else if (bmi >= 30 && bmi < 40) {
-    roastMessage = "<br><span style='color:#FF4F4F;'>💀 Nah, can't even roast you at this point... genuinely feel bad for you.</span>";
-} else if (bmi >= 40) {
-    roastMessage = "<br><span style='color:#D40000;'>💀 Is life really that shit? I get u tbh, food is life...</span>";
-}
-
-document.getElementById("bmi-result").innerHTML = `⚖️ Your BMI is <b>${bmi}</b> (${bmiCategory}).` + roastMessage;
-
-
+    document.getElementById("bmi-result").innerHTML = `⚖️ Your BMI is <b>${bmi}</b> (${bmiCategory}).` + roastMessage;
     document.getElementById("death-result").innerHTML = deathMessage;
 }
+
 
 
 
