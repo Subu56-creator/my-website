@@ -218,7 +218,6 @@ function calculateCancelScore() {
     document.getElementById("cancel-quiz-result").innerHTML = `<b>${resultText}</b>`;
 }
 
-
 // Correct answers with multiple accepted variations
 const gameAnswers = [
     ["tekken", "tekken 5", "tekken 8"], // 1
