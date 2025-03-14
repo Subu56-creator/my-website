@@ -270,6 +270,7 @@ if (gameScore === 3) {
 }
 
 
+
         currentQuestion++;
         setTimeout(loadQuestion, 1000);
     } else {
